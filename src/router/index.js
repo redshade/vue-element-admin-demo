@@ -121,6 +121,30 @@ export const constantRoutes = [
         meta: { title: 'Profile', icon: 'user', noCache: true }
       }
     ]
+  },
+  {
+    path: '/demo',
+    component: Layout,
+    redirect: '/demo/demo1',
+    name: 'demo',
+    meta: {
+      title: 'demo',
+      icon: 'user'
+    },
+    children: [
+      {
+        path: 'demo1',
+        component: () => import('@/views/demo/demo1'),
+        name: 'demo1',
+        meta: { title: 'demo1', icon: 'user', noCache: true }
+      },
+      {
+        path: 'demo2',
+        component: () => import('@/views/demo/demo2'),
+        name: 'demo2',
+        meta: { title: 'demo2', icon: 'user', noCache: true }
+      }
+    ]
   }
 ]
 

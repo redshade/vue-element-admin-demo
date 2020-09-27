@@ -18,7 +18,7 @@ router.beforeEach(async(to, from, next) => {
   document.title = getPageTitle(to.meta.title)
 
   // determine whether the user has logged in
-  const hasToken = getToken()
+  const hasToken = getToken() // 开启登录验证
 
   if (hasToken) {
     if (to.path === '/login') {

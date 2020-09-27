@@ -128,7 +128,8 @@
         <el-button @click="dialogFormVisible = false">
           Cancel
         </el-button>
-        <el-button type="primary" @click="dialogStatus==='create'?createData():updateData()">
+        <!-- <el-button type="primary" @click="dialogStatus==='create'?createData():updateData()"> -->
+        <el-button type="primary" @click="createData()">
           Confirm
         </el-button>
       </div>
@@ -288,6 +289,7 @@ export default {
     },
     createData() {
       this.$refs['dataForm'].validate((valid) => {
+        console.log('createData')
         if (valid) {
           this.temp.id = parseInt(Math.random() * 100) + 1024 // mock a id
           this.temp.author = 'vue-element-admin'
